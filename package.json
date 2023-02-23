@@ -1,0 +1,53 @@
+{
+  "name": "",
+  "version": "",
+  "description": "examples codes to demonstrate how to listen Binance Websocket Server",
+  "main": "index.js",
+  "dependencies": {
+    "@prisma/client": "^4.10.1",
+    "axios": "^0.21.4",
+    "big.js": "^5.2.2",
+    "kleur": "^4.1.5",
+    "ramda": "^0.26.1",
+    "ws": "^7.4.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.1.0",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "babel-jest": "^27.3.1",
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "jest": "^27.3.1",
+    "jest-watch-master": "^1.0.0",
+    "nodemon": "^2.0.7",
+    "prisma": "^4.10.1"
+  },
+  "scripts": {
+    "orderbook": "nodemon -w ./src --exec babel-node ./src/app.js",
+    "user": "nodemon -w ./src --exec babel-node ./src/user.js",
+    "margin-user": "nodemon -w ./src --exec babel-node ./src/margin-user.js",
+    "futures-user": "nodemon -w ./src --exec babel-node ./src/futures-user.js",
+    "delivery-futures-user": "nodemon -w ./src --exec babel-node ./src/delivery-futures-user.js",
+    "multi-stream": "nodemon -w ./src --exec babel-node ./src/multi-stream-depth.js",
+    "monitor-spot-depth": "nodemon -w ./src --exec babel-node ./src/spot/monitor-depth.js",
+    "monitor-spot-trade-ethusdt": "nodemon -w ./src --exec babel-node ./src/spot/monitor-trade-eth-usdt.js",
+    "monitor-spot-trade-minausdt": "nodemon -w ./src --exec babel-node ./src/spot/monitor-trade-mina-usdt.js",
+    "monitor-spot-trade-solusdt": "nodemon -w ./src --exec babel-node ./src/spot/monitor-trade-sol-usdt.js",
+    "monitor-futures": "nodemon -w ./src --exec babel-node ./src/monitor-futures.js",
+    "start": "nodemon -w ./src --exec babel-node ./src/index.js",
+    "delivery": "nodemon -w ./src --exec babel-node ./src/delivery.js",
+    "build": "babel src -d dist",
+    "test": "jest --watchAll"
+  },
+  "jest": {
+    "watchPlugins": [
+      "jest-watch-master"
+    ]
+  },
+  "author": "Liang Shi",
+  "license": "MIT"
+}

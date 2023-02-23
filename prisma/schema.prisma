@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model tradeETHUSDT {
+  id            Int      @id @default(autoincrement())
+  price         Decimal
+  quantity      Decimal
+  quantityTotal Decimal
+  side          String
+  contractsPS   Decimal
+  buyers        Decimal
+  buyersPS      Decimal
+  sellers       Decimal
+  sellersPS     Decimal
+  winner        Decimal
+  createdAt     DateTime @default(now()) @db.Timestamptz(3)
+
+  // Nome salvo da tabela do banco
+  @@map("tradeETHUSDT")
+}
+
+model tradeMINAUSDT {
+  id            Int      @id @default(autoincrement())
+  price         Decimal
+  quantity      Decimal
+  quantityTotal Decimal
+  side          String
+  contractsPS   Decimal
+  buyers        Decimal
+  buyersPS      Decimal
+  sellers       Decimal
+  sellersPS     Decimal
+  winner        Decimal
+  createdAt     DateTime @default(now()) @db.Timestamptz(3)
+
+  // Nome salvo da tabela do banco
+  @@map("tradeMINAUSDT")
+}
+
+// commands
+// yarn prisma migrate dev
