@@ -75,5 +75,20 @@ npm run test
 
 ```
 
+## Modifications
+I have forked this project from another project called binance websocket (need to get the URL), and have done some modification. 
+Using the websocket in realtime, I'm doing some math to pre calculate how many contracts are being buyed, selled and the winner. 
+All the data is pushed to a DB (you can configure in .env).
+I have added the prisma orm to deal with the DB. 
+
+```bash
+# run ethusdt
+npm run monitor-spot-trade-ethusdt
+# run minausdt
+npm run monitor-spot-trade-minausdt
+
+```
+
+
 ## License
 MIT
