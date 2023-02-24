@@ -8,6 +8,7 @@
     "axios": "^0.21.4",
     "big.js": "^5.2.2",
     "kleur": "^4.1.5",
+    "nodemon": "^2.0.20",
     "ramda": "^0.26.1",
     "ws": "^7.4.6"
   },
@@ -23,7 +24,6 @@
     "eslint-plugin-import": "^2.18.2",
     "jest": "^27.3.1",
     "jest-watch-master": "^1.0.0",
-    "nodemon": "^2.0.7",
     "prisma": "^4.10.1"
   },
   "scripts": {
@@ -37,6 +37,7 @@
     "monitor-spot-trade-ethusdt": "nodemon -w ./src --exec babel-node ./src/spot/monitor-trade-eth-usdt.js",
     "monitor-spot-trade-minausdt": "nodemon -w ./src --exec babel-node ./src/spot/monitor-trade-mina-usdt.js",
     "monitor-spot-trade-solusdt": "nodemon -w ./src --exec babel-node ./src/spot/monitor-trade-sol-usdt.js",
+    "monitor-spot-trade-usdtbrl": "nodemon -w ./src --exec babel-node ./src/spot/monitor-trade-usdt-brl.js",
     "monitor-futures": "nodemon -w ./src --exec babel-node ./src/monitor-futures.js",
     "start": "nodemon -w ./src --exec babel-node ./src/index.js",
     "delivery": "nodemon -w ./src --exec babel-node ./src/delivery.js",
