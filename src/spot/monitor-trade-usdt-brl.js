@@ -27,7 +27,7 @@ const saveToDB = async (
   sellersPS,
   winner,
 ) => {
-  const data = await prisma.tradeMINAUSDT.create({
+  const data = await prisma.tradeUSDTBRL.create({
     data: {
       price,
       quantity,
