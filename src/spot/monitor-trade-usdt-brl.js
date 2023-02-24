@@ -104,7 +104,7 @@ const socketClient = new SocketClient(`ws/${streamName}`, 'wss://stream.binance.
         contractsTotalPS = measurePerSecond(startTime, new Date(), contractsTotal);
         winner = contractsBuyPS - contractsSellersPS; // buyers > 0 sellers < 0
 
-        // await saveToDB(price,quantity,contractsTotal,side,contractsTotalPS,contractsBuy,contractsBuyPS,contractsSellers,contractsSellersPS,winner);
+        await saveToDB(price,quantity,contractsTotal,side,contractsTotalPS,contractsBuy,contractsBuyPS,contractsSellers,contractsSellersPS,winner);
         console.log(`[${streamName}] ${getDate()} - ${blue(`price:${price.toFixed(3)}`)} | quantity:${quantity}/${contractsTotal.toFixed(0)}| side:${side} | ${yellow(`ContractsPS:${contractsTotalPS}`)}${green(` | Buyers:${contractsBuy.toFixed(2)}`)}${red(` Sellers:${contractsSellers.toFixed(2)}`)}${green(`| PS:${contractsBuyPS}`)}${red(` PS:${contractsSellersPS}`)} winner:${winner.toFixed(2)}`);
       }
     });
