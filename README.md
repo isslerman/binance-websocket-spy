@@ -70,6 +70,9 @@ npm run monitor-futures
 
 npm install
 
+# This will re-establish the link between schema.prisma and .env file.
+npx prisma generate
+
 # run test
 npm run test
 
@@ -82,6 +85,8 @@ All the data is pushed to a DB (you can configure in .env).
 I have added the prisma orm to deal with the DB. 
 
 ```bash
+# This will re-establish the link between schema.prisma and .env file.
+npx prisma generate
 # run ethusdt
 npm run monitor-spot-trade-ethusdt
 # run minausdt

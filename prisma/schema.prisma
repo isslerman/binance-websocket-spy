@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -24,7 +21,6 @@ model tradeETHUSDT {
   winner        Decimal
   createdAt     DateTime @default(now()) @db.Timestamptz(3)
 
-  // Nome salvo da tabela do banco
   @@map("tradeETHUSDT")
 }
 
@@ -42,9 +38,49 @@ model tradeMINAUSDT {
   winner        Decimal
   createdAt     DateTime @default(now()) @db.Timestamptz(3)
 
-  // Nome salvo da tabela do banco
   @@map("tradeMINAUSDT")
 }
 
-// commands
-// yarn prisma migrate dev
+model tradeUSDTBRL {
+  id            Int      @id @default(autoincrement())
+  price         Decimal
+  quantity      Decimal
+  quantityTotal Decimal
+  side          String
+  contractsPS   Decimal
+  buyers        Decimal
+  buyersPS      Decimal
+  sellers       Decimal
+  sellersPS     Decimal
+  winner        Decimal
+  createdAt     DateTime @default(now()) @db.Timestamptz(3)
+
+  @@map("tradeUSDTBRL")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model winner5methusdt {
+  id        Int      @id @default(autoincrement())
+  value     Decimal
+  createdat DateTime @db.Timestamptz(3)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model winner5mminausdt {
+  id        Int      @id @default(autoincrement())
+  value     Decimal
+  createdat DateTime @db.Timestamptz(3)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model winner5musdtbrl {
+  id        Int      @id @default(autoincrement())
+  value     Decimal
+  createdat DateTime @db.Timestamptz(3)
+
+  @@ignore
+}
